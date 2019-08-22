@@ -5,12 +5,12 @@ class Luarocks < Formula
   sha256 "1236a307ca5c556c4fed9fdbd35a7e0e80ccf063024becc8c3bf212f37ff0edf"
   head "https://github.com/luarocks/luarocks.git"
 
-  depends_on "kong/kong/openresty"
+  depends_on "dorongold/kong/openresty"
 
   patch :DATA
 
   def install
-    openresty_prefix = Formula["kong/kong/openresty"].prefix
+    openresty_prefix = Formula["dorongold/kong/openresty"].prefix
 
     # Install to the Cellar, but the tree to install modules is in HOMEBREW_PREFIX/opt/kong
     args = [

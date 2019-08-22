@@ -11,16 +11,16 @@ class Kong < Formula
     url "https://github.com/Kong/kong.git", :branch => "next"
   end
 
-  depends_on "kong/kong/luarocks"
-  depends_on "kong/kong/openresty"
+  depends_on "dorongold/kong/luarocks"
+  depends_on "dorongold/kong/openresty"
   depends_on "libyaml"
   depends_on "openssl@1.1"
 
   patch :DATA
 
   def install
-    luarocks_prefix = Formula["kong/kong/luarocks"].prefix
-    openresty_prefix = Formula["kong/kong/openresty"].prefix
+    luarocks_prefix = Formula["dorongold/kong/luarocks"].prefix
+    openresty_prefix = Formula["dorongold/kong/openresty"].prefix
     openssl_prefix = Formula["openssl@1.1"].prefix
 
     system "#{luarocks_prefix}/bin/luarocks",
